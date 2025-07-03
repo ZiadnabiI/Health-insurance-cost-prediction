@@ -27,7 +27,7 @@ The tuned Random Forest model was selected as the final model for deployment due
 
 ## 📂 Repository Contents
 
--   `Ziad's Project.ipynb`: The Jupyter Notebook containing all data analysis, feature engineering, model training, and evaluation steps.
+-   `EDA-ML.ipynb`: The Jupyter Notebook containing all data analysis, feature engineering, model training, and evaluation steps.
 -   `app.py`: The Python script for the Streamlit web application.
 -   `insurance_model.pkl`: The saved (pickled) file of the trained and tuned Random Forest model.
 -   `scaler.pkl`: The saved file for the `StandardScaler` used on the training data.
