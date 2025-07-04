@@ -1,5 +1,5 @@
 # Health Insurance Cost Prediction
-
+# Stramlet web https://health-insurance-cost-prediction-ziad.streamlit.app/
 This project aims to predict the cost of health insurance for individuals based on several personal and health-related factors. The prediction is made using a machine learning model trained on a dataset of insurance information. The final model is deployed as a user-friendly web application using Streamlit.
 
 ## 📈 Project Overview
@@ -32,4 +32,3 @@ The tuned Random Forest model was selected as the final model for deployment due
 -   `insurance_model.pkl`: The saved (pickled) file of the trained and tuned Random Forest model.
 -   `scaler.pkl`: The saved file for the `StandardScaler` used on the training data.
 -   `requirements.txt`: A list of all Python libraries required to run the project.
--   `README.md`: This file, explaining the project.
