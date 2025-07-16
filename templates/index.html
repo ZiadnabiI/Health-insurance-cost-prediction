@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Charge Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h1 class="card-title text-center mb-4">Insurance Charge Predictor 🩺</h1>
+                <p class="text-center text-muted">Enter your details below to get an estimated insurance charge.</p>
+
+                <form action="{{ url_for('predict') }}" method="post">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" min="18" max="100" value="30" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="sex" class="form-label">Sex</label>
+                            <select class="form-select" id="sex" name="sex" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="bmi" class="form-label">BMI (Body Mass Index)</label>
+                            <input type="number" step="0.01" class="form-control" id="bmi" name="bmi" min="10.0" max="60.0" value="25.0" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="children" class="form-label">Number of Children</label>
+                            <input type="number" class="form-control" id="children" name="children" min="0" max="20" value="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                         <div class="col-md-6 mb-3">
+                            <label for="smoker" class="form-label">Smoker</label>
+                            <select class="form-select" id="smoker" name="smoker" required>
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="region" class="form-label">Region</label>
+                            <select class="form-select" id="region" name="region" required>
+                                <option value="southwest">Southwest</option>
+                                <option value="southeast">Southeast</option>
+                                <option value="northwest">Northwest</option>
+                                <option value="northeast">Northeast</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Predict Charge</button>
+                    </div>
+                </form>
+
+                {% if prediction_text %}
+                <div class="alert alert-success mt-4 text-center" role="alert">
+                    <h3>{{ prediction_text }}</h3>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
