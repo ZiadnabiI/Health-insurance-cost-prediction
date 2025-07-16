@@ -1,6 +1,6 @@
 # Health Insurance Cost Prediction
-# Stramlet web
-https://health-insurance-cost-prediction-ziad.streamlit.app/
+# web Deployment
+https://huggingface.co/spaces/ziadnabil/Health-insurance-cost-prediction
 
 This project aims to predict the cost of health insurance for individuals based on several personal and health-related factors. The prediction is made using a machine learning model trained on a dataset of insurance information. The final model is deployed as a user-friendly web application using Streamlit.
 
